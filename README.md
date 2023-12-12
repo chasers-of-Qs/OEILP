@@ -28,7 +28,6 @@ pip install -r requirements.txt`
 The full inductive datasets used in these experiments can be found in the `data` folder.
 
 ### Training
-
 To start training a model, run the following commands: 
 
 ```shell
@@ -56,3 +55,27 @@ python test_typing.py -d yago -e yago
 python test_typing.py -d db -e db
 ```
 
+# Citation
+
+If this code is useful for you, we appreciate if you cite the following:
+
+```
+@inproceedings{zhou-etal-2023-inductive,
+    title = "Inductive Relation Inference of Knowledge Graph Enhanced by Ontology Information",
+    author = "Zhou, Wentao  and
+      Zhao, Jun  and
+      Gui, Tao  and
+      Zhang, Qi  and
+      Huang, Xuanjing",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-emnlp.431",
+    pages = "6491--6502",
+}
+```
