@@ -80,7 +80,7 @@ class Trainer():
             if len(score_idx) != 0:
                 loss_type = self.criterion3(score_type_pos, score_type_neg.view(len(score_type_pos), -1).mean(dim=1),
                                             torch.Tensor(np.ones(len(score_pos))*-1).to(device=self.params.device))
-                loss = loss + self.params.omega2 * loss_type
+                loss = loss + self.params.omega * loss_type
 
             loss.backward()
             self.optimizer.step()
@@ -130,7 +130,7 @@ class Trainer():
             self.optimizer.zero_grad()
             score_onto_pos = self.graph_classifier(data_pos, cal_onto=True)
             score_onto_neg = self.graph_classifier(data_neg, cal_onto=True)
-            loss = self.params.omega * self.criterion2(score_onto_pos,
+            loss = self.params.alpha * self.criterion2(score_onto_pos,
                                                        score_onto_neg.view(len(score_onto_pos), -1).mean(dim=1),
                                                        torch.Tensor([-1]).to(device=self.params.device))
             loss.backward()
